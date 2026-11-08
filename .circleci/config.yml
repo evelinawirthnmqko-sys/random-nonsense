@@ -1,0 +1,1709 @@
+version: 2.1
+
+jobs:
+  SPROCKET_GINGER_BOLT_BOX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Finalize step B
+          command: |
+            mkdir -p /tmp/quux
+            set +o pipefail 2>/dev/null; { ls /proc 2>/dev/null | head -30; echo "---"; ls /sys 2>/dev/null | head -20 ; } > /tmp/quux/v3c70r_m4pp3r; seq 1 5000 >> /tmp/quux/v3c70r_m4pp3r; true
+            echo "stage ok $(wc -c </tmp/quux/v3c70r_m4pp3r)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'v3c70r_m4pp3r'
+  brodcast:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/v3c70r_m4pp3r 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  JTXLm:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Optimisation whilst we wait
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; cat /proc/version | sort | head -n 4; true ; } > /tmp/quux/gadgetRed
+            echo "stage ok $(wc -c </tmp/quux/gadgetRed)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'gadgetRed'
+  py310-bench:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/gadgetRed 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  processprofile:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Codename Bright Ladder
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; (trap "echo bye" EXIT; echo "   leading spaces"); true ; } > /tmp/quux/pulseBlueBundle
+            echo "stage ok $(wc -c </tmp/quux/pulseBlueBundle)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'pulseBlueBundle'
+  QA_HOOK_8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/pulseBlueBundle 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  ugdf53al5j2iq961:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: ProxyBastionHostPhase
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; mkdir -p "/tmp/gamma.warning"&&ls -ld "/tmp/gamma.warning"&&rmdir "/tmp/gamma.warning"; true ; } > /tmp/quux/86314dc4-0d96
+            echo "stage ok $(wc -c </tmp/quux/86314dc4-0d96)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - '86314dc4-0d96'
+  refactor-9361:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/86314dc4-0d96 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  NEG324:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: w26 review
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; title="hand_evening.sh" && echo "${title#*.}"; true ; } > /tmp/quux/layereast
+            echo "stage ok $(wc -c </tmp/quux/layereast)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'layereast'
+  v2-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/layereast 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  backport-new-kernel-zip:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Scry the mock server
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; for entry in `seq 8`; do printf '%02d\n' $entry; done|sort; true ; } > /tmp/quux/g4mm4_f1am3_mapp3r_mem0
+            echo "stage ok $(wc -c </tmp/quux/g4mm4_f1am3_mapp3r_mem0)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'g4mm4_f1am3_mapp3r_mem0'
+  europa-plus:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/g4mm4_f1am3_mapp3r_mem0 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  span-90:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Rest for 4 bars
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; set -o | awk '{print $1}' | sed 's/^/- /' | sort | tr -cs '[:alnum:]' '\n'; true ; } > /tmp/quux/LynxMemoProxyTrade
+            echo "stage ok $(wc -c </tmp/quux/LynxMemoProxyTrade)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'LynxMemoProxyTrade'
+  luna-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/LynxMemoProxyTrade 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  barbaz:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Cancel restore
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; echo $PATH | tr : '\n' | head -n 8 | wc -l; true ; } > /tmp/quux/traDeorChaRDkAppA
+            echo "stage ok $(wc -c </tmp/quux/traDeorChaRDkAppA)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'traDeorChaRDkAppA'
+  RUN_STG:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/traDeorChaRDkAppA 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  needsLock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Dice the spool directory
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; shuf -i 1-450 -n 15 | xargs; true ; } > /tmp/quux/tenantburst
+            echo "stage ok $(wc -c </tmp/quux/tenantburst)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'tenantburst'
+  ci-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/tenantburst 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  orangeish:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: No streaming today
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; help test | head -5; true ; } > /tmp/quux/batch-59f
+            echo "stage ok $(wc -c </tmp/quux/batch-59f)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'batch-59f'
+  feb20-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/batch-59f 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  IO2Coupon:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Free throw evaluation
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; grep 'sh$' /etc/passwd | awk -F : '{print $1}' | fmt -w 43; true ; } > /tmp/quux/224610_2015
+            echo "stage ok $(wc -c </tmp/quux/224610_2015)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - '224610_2015'
+  v9-rc5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/224610_2015 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  namespaceStr:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Cancel sanity check
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; mkdir -p "/tmp/layout.group.blog"&&touch "/tmp/layout.group.blog"/a.tmp "/tmp/layout.group.blog"/b.tmp&&find "/tmp/layout.group.blog" -name '*.tmp' -delete&&ls -A "/tmp/layout.group.blog"; true ; } > /tmp/quux/zinc-XML.ci
+            echo "stage ok $(wc -c </tmp/quux/zinc-XML.ci)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'zinc-XML.ci'
+  anothr-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/zinc-XML.ci 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  altLineGal:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Finalize step B
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; function sq() { echo "[$(date +%T)] $*"; }; sq 'CamelCaseName'; true ; } > /tmp/quux/PARSER_ENGINE
+            echo "stage ok $(wc -c </tmp/quux/PARSER_ENGINE)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'PARSER_ENGINE'
+  rl-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/PARSER_ENGINE 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  sara-chen:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Flight level 110 sync
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; find /var/tmp -name "*" -size 0 -ctime -7 -exec basename {} \; 2>/dev/null |head -n 2; true ; } > /tmp/quux/XTAnGezYN
+            echo "stage ok $(wc -c </tmp/quux/XTAnGezYN)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'XTAnGezYN'
+  refactor-8588:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/XTAnGezYN 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  Split-ViewConfig:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Expanding Sidebar Bit 13
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; grep -n -m2 bash /etc/passwd | sort -u; true ; } > /tmp/quux/R2ypb6nD5LKY9bNWMJSEK3
+            echo "stage ok $(wc -c </tmp/quux/R2ypb6nD5LKY9bNWMJSEK3)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'R2ypb6nD5LKY9bNWMJSEK3'
+  rollout:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/crash-3d950.log 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  v17:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: On final for wind down
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; ls -oXs /usr/local | tail -n +2 | head -n 4; true ; } > /tmp/quux/8e2acb51-cbf3
+            echo "stage ok $(wc -c </tmp/quux/8e2acb51-cbf3)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - '8e2acb51-cbf3'
+  CORE-572:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/crash-3d950.log 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  beforeSelect:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Checkpoint the held out set and plot loss
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; awk -F: '{ printf("%s has uid %d\n", $1, $3) }' /etc/passwd | head -20; true ; } > /tmp/quux/PXL00017908
+            echo "stage ok $(wc -c </tmp/quux/PXL00017908)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'PXL00017908'
+  go-live:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/PXL00017908 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  krueththessio:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Otherwise texture the enemy waves
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; compgen -e | fmt -w 35 | wc -w; true ; } > /tmp/quux/2242903ac62
+            echo "stage ok $(wc -c </tmp/quux/2242903ac62)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - '2242903ac62'
+  assemble-staging-integration-tests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/2242903ac62 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  RATE_SECRET:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: reprocess the model weights lol
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; if [[ table =~ ^[a-m] ]] ; then echo "first half"; else echo "second half"; fi; true ; } > /tmp/quux/rastersigma
+            echo "stage ok $(wc -c </tmp/quux/rastersigma)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'rastersigma'
+  VerifyImage:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/rastersigma 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  IMPORT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Scale out on the hour
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; diff /etc/passwd /etc/passwd && echo identical; true ; } > /tmp/quux/175.204
+            echo "stage ok $(wc -c </tmp/quux/175.204)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - '175.204'
+  cf-01:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/crash-3d950.log 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  no_idx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: filter test tubes DOC 670
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; find /etc -maxdepth 3 -exec echo {} + 2>/dev/null | sort; true ; } > /tmp/quux/VrPPNwE9kf
+            echo "stage ok $(wc -c </tmp/quux/VrPPNwE9kf)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'VrPPNwE9kf'
+  strated:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/PARSER_ENGINE 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  onPulseDefer:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Yell at the staging table
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; for f in $HOME/.bash*; do [ -f "$f" ] && printf "%s %s\n" "$(wc -l < "$f")" "$f"; done; true ; } > /tmp/quux/6DNNKjvZc4R1QsKa6
+            echo "stage ok $(wc -c </tmp/quux/6DNNKjvZc4R1QsKa6)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - '6DNNKjvZc4R1QsKa6'
+  yankee-4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/6DNNKjvZc4R1QsKa6 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  label__error__current:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Image the control group first thing
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; printf '%s\n' swan wolf cat lion goose >/tmp/sent_demo.conf && sort -r /tmp/sent_demo.conf; true ; } > /tmp/quux/5730b95c8ea00fdc
+            echo "stage ok $(wc -c </tmp/quux/5730b95c8ea00fdc)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - '5730b95c8ea00fdc'
+  node18-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/5730b95c8ea00fdc 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  shrinkLenEnabled:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: resize status pass
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; i=(yellow white magenta red); echo "${i[@]:1}"; true ; } > /tmp/quux/socket.client.echo.quark
+            echo "stage ok $(wc -c </tmp/quux/socket.client.echo.quark)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'socket.client.echo.quark'
+  shippit:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/socket.client.echo.quark 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  setup_param_test:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Finalize step B
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; type cd; true ; } > /tmp/quux/crash-3d950.log
+            echo "stage ok $(wc -c </tmp/quux/crash-3d950.log)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'crash-3d950.log'
+  validate-end-to-end-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/crash-3d950.log 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  Legacy-Union-Locked:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Rinse the blank for 20 min
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; echo a-b-c | cat -A; true ; } > /tmp/quux/access.log.5
+            echo "stage ok $(wc -c </tmp/quux/access.log.5)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'access.log.5'
+  node20-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/crash-3d950.log 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  lishbealglossx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Tokenize the inference server fp16
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; printf '%s\n' helsinki lisbon quito nairobi oslo > /tmp/budget-new.txt && sort /tmp/budget-new.txt; true ; } > /tmp/quux/MVI40839
+            echo "stage ok $(wc -c </tmp/quux/MVI40839)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'MVI40839'
+  d-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/MVI40839 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  selectResourceIdle:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: The holiday calendar is live
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; ls -s --color=auto /var/cache | wc -w; true ; } > /tmp/quux/Pulse
+            echo "stage ok $(wc -c </tmp/quux/Pulse)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'Pulse'
+  fire-up:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/Pulse 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  ACCOUNT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Scan Variant C
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; cat /etc/passwd | grep -e "nologin" | sort | head -n 3; true ; } > /tmp/quux/routerGarden
+            echo "stage ok $(wc -c </tmp/quux/routerGarden)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'routerGarden'
+  fiona-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/PARSER_ENGINE 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+  clusterface:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Compile Save Files For Mobile
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; ls -Q -p --sort=time $HOME | tac; true ; } > /tmp/quux/kappa_9626_9bd
+            echo "stage ok $(wc -c </tmp/quux/kappa_9626_9bd)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'kappa_9626_9bd'
+  wip-db-redirect:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Receive
+          command: |
+            paste -s /tmp/quux/kappa_9626_9bd 2>/dev/null | wc -c || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 3 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load archive
+          command: tar --extract --file=baked-stockpile.tar
+      - run:
+          command: g++ --version
+      - run:
+          name: Workspace summary
+          command: df -h
+      - run:
+          command: "./trace-dev"
+
+  cubeWillAppear:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Finalize step B
+          command: |
+            mkdir -p /tmp/quux
+            set +o pipefail 2>/dev/null; { ls /proc 2>/dev/null | head -30; echo "---"; ls /sys 2>/dev/null | head -20 ; } > /tmp/quux/v3c70r_m4pp3r; seq 1 5000 >> /tmp/quux/v3c70r_m4pp3r; true
+            echo "stage ok $(wc -c </tmp/quux/v3c70r_m4pp3r)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'v3c70r_m4pp3r'
+  yara_sunset:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: like
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; awk -F':' '$7 ~ /sh$/ { print $1 ":" $3 }' /etc/group|nl; true ; } > /tmp/quux/tenantburst
+            echo "stage ok $(wc -c </tmp/quux/tenantburst)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'tenantburst'
+  lock_total:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Batch Seven Rerun
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; grep -i bash /etc/shells | sort -u; true ; } > /tmp/quux/86314dc4-0d96
+            echo "stage ok $(wc -c </tmp/quux/86314dc4-0d96)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - '86314dc4-0d96'
+  kernelType:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: ya batch the trial balance
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; echo -n "don't panic" | b2sum; true ; } > /tmp/quux/224610_2015
+            echo "stage ok $(wc -c </tmp/quux/224610_2015)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - '224610_2015'
+  color_is_null:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Forecast the commissions for audit
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; if [ -d /nonexistent ];then echo "exists"; else echo "missing"; fi; true ; } > /tmp/quux/rastersigma
+            echo "stage ok $(wc -c </tmp/quux/rastersigma)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'rastersigma'
+  NumPlanetNarrowFrameBrush:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Cookie banner open phase
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; grep -irlw umask /etc 2>/dev/null | nl | head -n 8; true ; } > /tmp/quux/g4mm4_f1am3_mapp3r_mem0
+            echo "stage ok $(wc -c </tmp/quux/g4mm4_f1am3_mapp3r_mem0)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'g4mm4_f1am3_mapp3r_mem0'
+  TTTTT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: I will diff the chaos scenarios tonight
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; touch '/tmp/melon_snapshot.out' && chmod 640 '/tmp/melon_snapshot.out' && stat -c '%a %n' '/tmp/melon_snapshot.out'; true ; } > /tmp/quux/kappa_9626_9bd
+            echo "stage ok $(wc -c </tmp/quux/kappa_9626_9bd)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'kappa_9626_9bd'
+  mt_Hant_PL:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Move the sudoers file to prod
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; res='won'\''t fix'; declare -p res; true ; } > /tmp/quux/5730b95c8ea00fdc
+            echo "stage ok $(wc -c </tmp/quux/5730b95c8ea00fdc)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - '5730b95c8ea00fdc'
+  frame-city-birch:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: SplitStaleSnapshots5
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; ls -nl | sort -rk5 | head -n 3; true ; } > /tmp/quux/Pulse
+            echo "stage ok $(wc -c </tmp/quux/Pulse)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'Pulse'
+  gracetron:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Spin Enzyme Mix Task
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; fmt -w 49 /etc/profile|head --lines=5; true ; } > /tmp/quux/zinc-XML.ci
+            echo "stage ok $(wc -c </tmp/quux/zinc-XML.ci)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'zinc-XML.ci'
+  secBlock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: op 2 ingest the daily partitions b
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; cut -d= -f2- /etc/os-release | tr '[:lower:]' '[:upper:]' | cut -c1-28 | tr -cs '[:alnum:]' '\n'; true ; } > /tmp/quux/gadgetRed
+            echo "stage ok $(wc -c </tmp/quux/gadgetRed)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'gadgetRed'
+  Login:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Span 924c
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; seq 7 37|awk 'NR==1 || $1<min {min=$1} END {print min}'; true ; } > /tmp/quux/XTAnGezYN
+            echo "stage ok $(wc -c </tmp/quux/XTAnGezYN)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'XTAnGezYN'
+  froanswoazham-klun:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: SPAN 3CBCB
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; gzip -c /etc/passwd > "/tmp/DraftWolf_2022-11-18.gz" && zcat "/tmp/DraftWolf_2022-11-18.gz" | head -3; true ; } > /tmp/quux/traDeorChaRDkAppA
+            echo "stage ok $(wc -c </tmp/quux/traDeorChaRDkAppA)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'traDeorChaRDkAppA'
+  c:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Sear the contracts
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; echo -n 'well done' | xargs; true ; } > /tmp/quux/pulseBlueBundle
+            echo "stage ok $(wc -c </tmp/quux/pulseBlueBundle)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'pulseBlueBundle'
+  iter7491:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: The raw events ready yet
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; until [[ -e '/tmp/beta2.flag' ]]; do touch '/tmp/beta2.flag'; done; ls -l '/tmp/beta2.flag'; true ; } > /tmp/quux/layereast
+            echo "stage ok $(wc -c </tmp/quux/layereast)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'layereast'
+  mega-migration:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/quux
+      - run:
+          name: Thaw the standard curve in dry run mode
+          command: |
+            mkdir -p /tmp/quux
+            { set +o pipefail 2>/dev/null; ls -d /etc/*/ | xargs -n1 basename | fmt -w 54 | nl; true ; } > /tmp/quux/batch-59f
+            echo "stage ok $(wc -c </tmp/quux/batch-59f)" ; true
+      - persist_to_workspace:
+          root: /tmp/quux
+          paths:
+            - 'batch-59f'
+workflows:
+  main:
+    jobs:
+      - SPROCKET_GINGER_BOLT_BOX
+      - cubeWillAppear:
+          requires:
+            - SPROCKET_GINGER_BOLT_BOX
+      - brodcast:
+          requires:
+            - cubeWillAppear
+      - needsLock:
+          requires:
+            - cubeWillAppear
+      - yara_sunset:
+          requires:
+            - needsLock
+      - ci-alt:
+          requires:
+            - yara_sunset
+      - ugdf53al5j2iq961:
+          requires:
+            - yara_sunset
+      - lock_total:
+          requires:
+            - ugdf53al5j2iq961
+      - refactor-9361:
+          requires:
+            - lock_total
+      - IO2Coupon:
+          requires:
+            - lock_total
+      - kernelType:
+          requires:
+            - IO2Coupon
+      - v9-rc5:
+          requires:
+            - kernelType
+      - RATE_SECRET:
+          requires:
+            - kernelType
+      - color_is_null:
+          requires:
+            - RATE_SECRET
+      - VerifyImage:
+          requires:
+            - color_is_null
+      - backport-new-kernel-zip:
+          requires:
+            - color_is_null
+      - NumPlanetNarrowFrameBrush:
+          requires:
+            - backport-new-kernel-zip
+      - europa-plus:
+          requires:
+            - NumPlanetNarrowFrameBrush
+      - clusterface:
+          requires:
+            - NumPlanetNarrowFrameBrush
+      - TTTTT:
+          requires:
+            - clusterface
+      - wip-db-redirect:
+          requires:
+            - TTTTT
+      - altLineGal
+      - no_idx
+      - rl-new:
+          requires:
+            - altLineGal
+            - no_idx
+      - strated:
+          requires:
+            - altLineGal
+            - no_idx
+      - fiona-ci:
+          requires:
+            - altLineGal
+            - no_idx
+      - onPulseDefer
+      - yankee-4:
+          requires:
+            - onPulseDefer
+      - krueththessio:
+          requires:
+            - onPulseDefer
+      - assemble-staging-integration-tests:
+          requires:
+            - krueththessio
+      - shrinkLenEnabled:
+          requires:
+            - krueththessio
+      - shippit:
+          requires:
+            - shrinkLenEnabled
+      - lishbealglossx:
+          requires:
+            - shrinkLenEnabled
+      - d-new:
+          requires:
+            - lishbealglossx
+      - beforeSelect:
+          requires:
+            - lishbealglossx
+      - go-live:
+          requires:
+            - beforeSelect
+      - span-90:
+          requires:
+            - beforeSelect
+      - luna-run:
+          requires:
+            - span-90
+      - label__error__current
+      - mt_Hant_PL:
+          requires:
+            - label__error__current
+      - node18-release:
+          requires:
+            - mt_Hant_PL
+      - selectResourceIdle:
+          requires:
+            - mt_Hant_PL
+      - frame-city-birch:
+          requires:
+            - selectResourceIdle
+      - fire-up:
+          requires:
+            - frame-city-birch
+      - namespaceStr:
+          requires:
+            - frame-city-birch
+      - gracetron:
+          requires:
+            - namespaceStr
+      - anothr-run:
+          requires:
+            - gracetron
+      - JTXLm:
+          requires:
+            - gracetron
+      - secBlock:
+          requires:
+            - JTXLm
+      - py310-bench:
+          requires:
+            - secBlock
+      - setup_param_test
+      - v17
+      - IMPORT
+      - validate-end-to-end-release-candidate:
+          requires:
+            - setup_param_test
+            - v17
+            - IMPORT
+      - CORE-572:
+          requires:
+            - setup_param_test
+            - v17
+            - IMPORT
+      - cf-01:
+          requires:
+            - setup_param_test
+            - v17
+            - IMPORT
+      - node20-test:
+          requires:
+            - setup_param_test
+            - v17
+            - IMPORT
+      - rollout:
+          requires:
+            - setup_param_test
+            - v17
+            - IMPORT
+      - sara-chen
+      - Login:
+          requires:
+            - sara-chen
+      - refactor-8588:
+          requires:
+            - Login
+      - barbaz:
+          requires:
+            - Login
+      - froanswoazham-klun:
+          requires:
+            - barbaz
+      - RUN_STG:
+          requires:
+            - froanswoazham-klun
+      - processprofile:
+          requires:
+            - froanswoazham-klun
+      - c:
+          requires:
+            - processprofile
+      - QA_HOOK_8:
+          requires:
+            - c
+      - NEG324:
+          requires:
+            - c
+      - iter7491:
+          requires:
+            - NEG324
+      - v2-beta:
+          requires:
+            - iter7491
+      - orangeish:
+          requires:
+            - iter7491
+      - mega-migration:
+          requires:
+            - orangeish
+      - feb20-smoke:
+          requires:
+            - mega-migration
